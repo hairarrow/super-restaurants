@@ -3,11 +3,14 @@ import { themes } from "@storybook/theming";
 import { withA11y } from "@storybook/addon-a11y";
 import { withKnobs } from "@storybook/addon-knobs";
 import { withTests } from "@storybook/addon-jest";
+import { withThemesProvider } from "storybook-addon-styled-component-theme";
 import results from "../jest-test-results.json";
+import theme, { darkTheme } from "../src/components/Theme";
 
 addDecorator(withA11y);
 addDecorator(withKnobs);
 addDecorator(withTests({ results }));
+addDecorator(withThemesProvider([theme, darkTheme]));
 
 addParameters({
 	options: {
