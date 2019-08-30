@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"@types/jest": "24.0.18",
+		"@types/jest": "^24.0.18",
 		"@types/node": "12.7.2",
 		"@types/react": "16.9.2",
 		"@types/react-dom": "16.9.0",
@@ -19,6 +19,7 @@
 	"scripts": {
 		"schema:download": "apollo schema:download graphql-schema.json",
 		"codegen:generate": "apollo codegen:generate --localSchemaFile=graphql-schema.json --target=typescript --includes=src/**/*.ts --tagName=gql",
+		"test:results": "yarn test --json --outputFile=jest-test-results.json",
 		"prestart": "yarn schema:download",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
@@ -26,7 +27,11 @@
 		"eject": "react-scripts eject",
 		"lint": "tslint -c tslint.json \"src/**/*.ts\"",
 		"format": "prettier --write \"src/**/*.ts\"",
-		"check-format": "prettier --check \"src/**/*.ts\""
+		"check-format": "prettier --check \"src/**/*.ts\"",
+		"prestorybook": "yarn test:results",
+		"storybook": "start-storybook -p 6006",
+		"prebuild-storybook": "yarn test:results",
+		"build-storybook": "build-storybook"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
@@ -49,8 +54,29 @@
 		"endOfLine": "lf"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.5.5",
+		"@storybook/addon-a11y": "^5.1.11",
+		"@storybook/addon-actions": "^5.1.11",
+		"@storybook/addon-centered": "^5.1.11",
+		"@storybook/addon-graphql": "^5.1.11",
+		"@storybook/addon-jest": "^5.1.11",
+		"@storybook/addon-knobs": "^5.1.11",
+		"@storybook/addon-links": "^5.1.11",
+		"@storybook/addon-viewport": "^5.1.11",
+		"@storybook/addons": "^5.1.11",
+		"@storybook/react": "^5.1.11",
+		"@storybook/theming": "^5.1.11",
+		"@types/storybook__addon-centered": "^3.4.1",
+		"@types/storybook__addon-jest": "^3.4.3",
+		"@types/storybook__addon-knobs": "^5.0.3",
+		"@types/storybook__react": "^4.0.2",
 		"apollo": "^2.18.0",
+		"babel-loader": "^8.0.6",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.14.0",
+		"jest-prop-type-error": "^1.1.0",
 		"prettier": "1.18.2",
+		"ts-jest": "^24.0.2",
 		"tslint": "^5.19.0",
 		"tslint-config-prettier": "^1.18.0",
 		"tslint-eslint-rules": "^5.4.0",
