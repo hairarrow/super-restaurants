@@ -1,4 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). _Even though it specifically says not to do that_
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) _Even though it's (explicitly prohibited in this project's brief)[https://github.com/superformula/frontend-test#tech-stack]_. In lieu of that blatant disregard of the rules, I thought I would make up for it by hitting all of the (items on the **Bonus** section)[https://github.com/superformula/frontend-test#bonus] to have this repository as a useful scaffold for future applications.
+
+To meet the requirements of this challenge, this project uses **React ^16, Styled Components, and Apollo** to create highly composable modules. In order to make this into a scaffold for future projects, I've also configured a variety of developer experience focused tools like **TypeScript, Prettier, TSLint, and Storybook** with addons for **component documentation (Knobs), accessibility testing (A11y)**, and integrated **Jest** results.
+
+## Structure
+
+### TODO
+
+- [ ] Define each module file (e.g. `Module.stories.tsx`)
+
+## Developer Experience
+
+### IDE
+
+Use whatever makes you the fastest, but I highly recommend using an IDE that supports intelligent code completion. The plugins I'll recommend here are specific to (VS Code)[https://code.visualstudio.com] which includes IntelliSense (code completion), embedded Git, and a variety of tools that facilitate debugging and refactoring... but it runs on Electron 😅.
+
+The entirety of the code in this project is written in _TypeScript_ which often means you're more than likely going to have to write a significant amount of _CSS_ and _GraphQL_ using a `*.ts` file instead of the appropriate `.graphql` or `.s?css` file. There are a variety of extensions available for _VS Code_ that enable appropriate syntax highlighting for these kinds of code.
+
+### Extensions
+
+These can all be found by searching for their name in the VS Code Marketplace
+
+- **TSLint** to check code for readability, maintainability, and functionality errors
+- **Prettier** to enforce a consistent code-style
+- **Apollo GraphQL** to add syntax highlighting to GraphQL templates, get instant feedback and intelligent autocomplete for fields, arguments, types, and variables as you write queries.
+- **vscode-styled-components** to add syntax highlighting CSS in styled-components
+- **Debugger for Chrome** to improve debugging experience
+- **Jest** to automatically run tests in the background
+- **JavaScript Booster** which provides various code actions (quick fixes) when editing TS code. (e.g. Replace string with template strings, add braces to arrow function)
+- **Vim**: _gottagofast_ (Try **amVim** if you notice any input lag)
+
+> All formatting discrepancies and most TSLint errors can be automatically fixed whenever a file is saved. To do this in VS Code add the following to your `settings.json`.
+
+```
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true
+	},
+	"editor.formatOnSave": true,
+}
+```
 
 ## Available Scripts
 

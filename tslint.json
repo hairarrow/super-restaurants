@@ -1,11 +1,77 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint-eslint-rules",
-        "tslint-react",
-        "tslint-config-prettier"
-    ],
-    "jsRules": {},
-    "rules": {},
-    "rulesDirectory": []
+	"defaultSeverity": "error",
+	"extends": ["tslint-eslint-rules", "tslint-react", "tslint-config-prettier"],
+	"jsRules": {},
+	"rules": {
+		"align": [
+			true,
+			"parameters",
+			"statements",
+			"arguments",
+			"members",
+			"elements"
+		],
+		"array-type": [true, "array"],
+		"arrow-return-shorthand": [true, "multiline"],
+		"arrow-parens": true,
+		"binary-expression-operand-order": true,
+		"eofline": true,
+		"indent": [true, "tabs", 2],
+		"interface-name": [true, "always-prefix"],
+		"interface-over-type-literal": true,
+		"linebreak-style": [true, "LF"],
+		"max-line-length": [true, 120],
+		"newline-before-return": true,
+		"no-consecutive-blank-lines": true,
+		"no-irregular-whitespace": true,
+		"no-return-await": true,
+		"no-trailing-whitespace": true,
+		"no-unused-variable": [true, { "ignore-pattern": "^_" }],
+		"no-unused-expression": true,
+		"no-unnecessary-type-assertion": true,
+		"no-var-keyword": true,
+		"no-console": { "severity": "warning" },
+		"object-literal-key-quotes": [true, "as-needed"],
+		"ordered-imports": [
+			true,
+			{
+				"import-sources-order": "lowercase-first",
+				"named-imports-order": "lowercase-first"
+			}
+		],
+		"prefer-conditional-expression": [true, "check-else-if"],
+		"prefer-const": true,
+		"prefer-for-of": true,
+		"prefer-object-spread": true,
+		"prefer-template": true,
+		"prefer-switch": true,
+		"promise-function-async": true,
+		"quotemark": [true, "double", "avoid-template", "jsx-double"],
+		"trailing-comma": [true, { "multiline": "always", "singleline": "never" }],
+		"semicolon": [true, "always"],
+		"space-before-function-paren": [true, "never"],
+		"variable-name": {
+			"options": [
+				"ban-keywords",
+				"check-format",
+				"allow-leading-underscore",
+				"allow-pascal-case"
+			]
+		},
+		"whitespace": [
+			true,
+			"check-branch",
+			"check-decl",
+			"check-operator",
+			"check-module",
+			"check-separator",
+			"check-rest-spread",
+			"check-type",
+			"check-typecast",
+			"check-type-operator",
+			"check-preblock",
+			"check-postbrace"
+		]
+	},
+	"rulesDirectory": []
 }

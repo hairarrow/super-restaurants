@@ -14,7 +14,7 @@ addDecorator(withThemesProvider([theme, darkTheme]));
 
 addParameters({
 	options: {
-		theme: themes.dark
+		theme: themes.light
 	}
 });
 
