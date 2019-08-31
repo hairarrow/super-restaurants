@@ -10,4 +10,15 @@ export default gql`
 			url
 		}
 	}
+
+	fragment businessDetails on Business {
+		name
+		is_closed
+		url
+		rating
+		price
+		categories {
+			title
+		}
+	}
 `;
