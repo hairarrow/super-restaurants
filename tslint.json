@@ -47,7 +47,7 @@
 		"prefer-switch": true,
 		"promise-function-async": true,
 		"quotemark": [true, "double", "avoid-template", "jsx-double"],
-		"trailing-comma": [true, { "multiline": "always", "singleline": "never" }],
+		"trailing-comma": [true, { "singleline": "never" }],
 		"semicolon": [true, "always"],
 		"space-before-function-paren": [true, "never"],
 		"variable-name": {
@@ -58,20 +58,11 @@
 				"allow-pascal-case"
 			]
 		},
-		"whitespace": [
-			true,
-			"check-branch",
-			"check-decl",
-			"check-operator",
-			"check-module",
-			"check-separator",
-			"check-rest-spread",
-			"check-type",
-			"check-typecast",
-			"check-type-operator",
-			"check-preblock",
-			"check-postbrace"
-		]
+		"jsx-curly-spacing": "always",
+		"jsx-self-close": true,
+		"jsx-wrap-multiline": true,
+		"jsx-boolean-value": true,
+		"jsx-space-before-trailing-slash": true
 	},
 	"rulesDirectory": []
 }

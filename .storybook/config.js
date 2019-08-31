@@ -6,6 +6,7 @@ import { withTests } from "@storybook/addon-jest";
 import { withThemesProvider } from "storybook-addon-styled-component-theme";
 import results from "../jest-test-results.json";
 import theme, { darkTheme } from "../src/components/Theme";
+import "../src/index.css";
 
 addDecorator(withA11y);
 addDecorator(withKnobs);

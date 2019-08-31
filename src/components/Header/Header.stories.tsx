@@ -1,7 +1,7 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import { text } from "@storybook/addon-knobs";
 import centered from "@storybook/addon-centered/react";
+import { text } from "@storybook/addon-knobs";
+import { storiesOf } from "@storybook/react";
 
 import Header from "./Header";
 
@@ -11,5 +11,14 @@ story.addDecorator(centered);
 
 story.add("Default", () => {
 	const title = text("Title", "Restaurants");
-	return <Header title={title} />;
+	const body = text(
+		"Body",
+		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	);
+
+	return (
+		<Header title={title}>
+			<p>{body}</p>
+		</Header>
+	);
 });
