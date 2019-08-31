@@ -2,11 +2,15 @@
 	"name": "restaurants",
 	"version": "0.1.0",
 	"private": true,
+	"engines": {
+		"yarn": "^1.13.0"
+	},
 	"dependencies": {
 		"@types/jest": "^24.0.18",
 		"@types/node": "12.7.2",
 		"@types/react": "16.9.2",
 		"@types/react-dom": "16.9.0",
+		"@types/react-router-dom": "^4.3.5",
 		"apollo-boost": "^0.4.4",
 		"dotenv": "^8.1.0",
 		"graphql": "^14.5.4",
@@ -14,6 +18,7 @@
 		"react": "^16.9.0",
 		"react-apollo": "^3.0.1",
 		"react-dom": "^16.9.0",
+		"react-router-dom": "^5.0.1",
 		"react-scripts": "3.1.1",
 		"styled-components": "^4.3.2",
 		"typescript": "3.6.2"
@@ -21,17 +26,19 @@
 	"scripts": {
 		"schema:download": "apollo schema:download graphql-schema.json",
 		"codegen:generate": "apollo codegen:generate --localSchemaFile=graphql-schema.json --target=typescript --includes=src/**/*.ts --tagName=gql",
-		"test:results": "yarn test --json --outputFile=jest-test-results.json --color",
+		"test:results": "yarn test:all all --json --outputFile=jest-test-results.json",
 		"test:results:watch": "yarn test:results --watch",
 		"prestart": "yarn schema:download",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
+		"test": "react-scripts test --color",
+		"test:all": "yarn test --all",
 		"eject": "react-scripts eject",
 		"lint": "tslint -c tslint.json \"src/**/*.ts\"",
 		"format": "prettier --write \"src/**/*.ts\"",
 		"check-format": "prettier --check \"src/**/*.ts\"",
 		"start:storybook": "start-storybook -p 6006",
+		"prestorybook": "yarn test:results --forceExit",
 		"storybook": "concurrently \"yarn test:results:watch\" \"yarn start:storybook\"",
 		"prebuild-storybook": "yarn test:results",
 		"build-storybook": "build-storybook"
@@ -69,6 +76,7 @@
 		"@storybook/addons": "^5.1.11",
 		"@storybook/react": "^5.1.11",
 		"@storybook/theming": "^5.1.11",
+		"@types/enzyme": "^3.10.3",
 		"@types/storybook__addon-centered": "^3.4.1",
 		"@types/storybook__addon-jest": "^3.4.3",
 		"@types/storybook__addon-knobs": "^5.0.3",
