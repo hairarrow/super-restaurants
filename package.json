@@ -6,6 +6,8 @@
 		"yarn": "^1.13.0"
 	},
 	"dependencies": {
+		"@apollo/react-hooks": "^3.0.1",
+		"@types/dotenv": "^6.1.1",
 		"@types/jest": "^24.0.18",
 		"@types/node": "12.7.2",
 		"@types/react": "16.9.2",
@@ -25,10 +27,11 @@
 	},
 	"scripts": {
 		"schema:download": "apollo schema:download graphql-schema.json",
-		"codegen:generate": "apollo codegen:generate --localSchemaFile=graphql-schema.json --target=typescript --includes=src/**/*.ts --tagName=gql",
-		"test:results": "yarn test:all all --json --outputFile=jest-test-results.json",
+		"precodegen:generate": "yarn schema:download",
+		"codegen:generate": "apollo codegen:generate --localSchemaFile=graphql-schema.json --target=typescript --includes=src/**/*.ts --tagName=gql --addTypename --globalTypesFile=src/types/graphql-global-types.ts types",
+		"test:results": "yarn test:all --json --outputFile=jest-test-results.json --detectOpenHandles ",
 		"test:results:watch": "yarn test:results --watch",
-		"prestart": "yarn schema:download",
+		"prestart": "yarn codegen:generate",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test --color",
@@ -37,10 +40,10 @@
 		"lint": "tslint -c tslint.json \"src/**/*.ts\"",
 		"format": "prettier --write \"src/**/*.ts\"",
 		"check-format": "prettier --check \"src/**/*.ts\"",
-		"start:storybook": "start-storybook -p 6006",
-		"prestorybook": "yarn test:results --forceExit",
+		"start:storybook": "NODE_PATH=. start-storybook -p 6006",
+		"prestorybook": "yarn test:results --ci --forceExit && yarn codegen:generate",
 		"storybook": "concurrently \"yarn test:results:watch\" \"yarn start:storybook\"",
-		"prebuild-storybook": "yarn test:results",
+		"prebuild-storybook": "yarn test:results --forceExit",
 		"build-storybook": "build-storybook"
 	},
 	"eslintConfig": {
@@ -77,6 +80,7 @@
 		"@storybook/react": "^5.1.11",
 		"@storybook/theming": "^5.1.11",
 		"@types/enzyme": "^3.10.3",
+		"@types/graphql": "^14.5.0",
 		"@types/storybook__addon-centered": "^3.4.1",
 		"@types/storybook__addon-jest": "^3.4.3",
 		"@types/storybook__addon-knobs": "^5.0.3",

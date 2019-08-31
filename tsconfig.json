@@ -16,5 +16,9 @@
 		"jsx": "react"
 	},
 	"include": ["src"],
-	"exclude": ["src/setupTests.js"]
+	"exclude": [
+		"src/testHelpers/setupTests.js",
+		"src/types/graphql-global-types.ts",
+		"node_modules"
+	]
 }
