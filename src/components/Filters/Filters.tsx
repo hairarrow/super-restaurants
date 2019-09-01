@@ -1,15 +1,24 @@
-import { useQuery } from "@apollo/react-hooks";
 import React, { FC } from "react";
-import categoryQuery from "../../graphql/queries/categories";
+import Categories from "../Categories";
+import Select from "../Select";
 
 const Filters: FC = () => {
-	const { loading, error, data } = useQuery(categoryQuery);
-
-	console.log(loading, error, data);
+	const openNow = true;
+	const priceOptions = ["$", "$$", "$$$", "$$$$"].map((value) => ({ value }));
 
 	return (
-		<form onSubmit={() => null}>
-			<label>Something</label>
+		<form
+			onSubmit={() => null}
+			style={{ display: "flex", alignItems: "center" }}
+		>
+			<h1>Filter By:</h1>
+			<label>
+				<input type="checkbox" checked={openNow} />
+				<span>Open Now</span>
+			</label>
+
+			<Select options={priceOptions} />
+			<Categories />
 		</form>
 	);
 };

@@ -6,7 +6,7 @@ import SearchReducer, {
 	initialState
 } from "../components/Search/SearchReducer";
 
-export const [Context, SearchContextProvider] = createSearchContext(
+export const [SearchContext, SearchContextProvider] = createSearchContext(
 	initialState,
 	SearchReducer
 );
