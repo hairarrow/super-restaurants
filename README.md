@@ -2,11 +2,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 To meet the requirements of this challenge, this project uses **React ^16, Styled Components, and Apollo** to create highly composable modules. In order to make this into a scaffold for future projects, I've also configured a variety of developer experience focused tools like **TypeScript, Prettier, TSLint, and Storybook** with addons for **component documentation (Knobs), accessibility testing (A11y)**, and integrated **Jest** results.
 
-## Structure
-
-### TODO
+# TODO
 
 - [ ] Define each module file (e.g. `Module.stories.tsx`)
+- [ ] Optimize the categories query by creating a custom resolver that will filter non-restaurant or food related categories
+
+## Structure
 
 ## Developer Experience
 
