@@ -1,7 +1,7 @@
 import { Dispatch } from "react";
 import { Business } from "../../graphql/queries/types/Business";
 import { Categories } from "../../graphql/queries/types/Categories";
-import { updateCategories } from "./actions";
+import { updateCategories, updateSelectedCategories } from "./actions";
 import { ISearchState } from "./SearchReducer";
 
 export enum SearchActions {
@@ -19,13 +19,14 @@ export interface ISearchAction {
 	price?: string;
 	categories?: Categories;
 	restaurants?: Business[];
+	selectedCategories?: string[];
 }
 
 export interface ISearchActions<T = ISearchAction> {
 	// updateOpen(open: boolean): T;
 	// updatePrice(price: string): T;
 	updateCategories(categories: Categories): T;
-	// updateSelectedCategories(selected: string[]): T;
+	updateSelectedCategories(selected: string[]): T;
 	// updateResults(results: Business[]): T;
 	// clearFilters(): T;
 }
@@ -33,4 +34,4 @@ export interface ISearchActions<T = ISearchAction> {
 export const useSearchActions = <S = ISearchState, A = Dispatch<ISearchAction>>(
 	state: S,
 	dispatch: A
-): ISearchActions => ({ updateCategories });
+): ISearchActions => ({ updateCategories, updateSelectedCategories });

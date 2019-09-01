@@ -7,12 +7,14 @@ export interface ISearchState {
 	price: string;
 	categories?: Categories;
 	restaurants?: Business[];
+	selectedCategories?: string[];
 }
 
 export const initialState: ISearchState = {
 	openNow: true,
 	price: "$",
-	restaurants: []
+	restaurants: [],
+	selectedCategories: []
 };
 
 export default function SearchReducer(
@@ -20,6 +22,11 @@ export default function SearchReducer(
 	action: ISearchAction
 ): ISearchState {
 	switch (action.type) {
+		case SearchActions.UpdateSelectedCategories:
+			return {
+				...state,
+				selectedCategories: action.selectedCategories
+			};
 		case SearchActions.UpdateCategories:
 			return {
 				...state,

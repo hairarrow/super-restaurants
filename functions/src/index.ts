@@ -2,7 +2,6 @@ import * as functions from "firebase-functions";
 import * as express from "express";
 import * as cors from "cors";
 import fetch from "cross-fetch";
-import { setContext } from "apollo-link-context";
 import { HttpLink } from "apollo-link-http";
 import {
 	introspectSchema,
@@ -12,16 +11,20 @@ import {
 
 async function proxy() {
 	const app = express();
-	const http = new HttpLink({
+	const link = new HttpLink({
 		uri: functions.config().yelp.host,
-		fetch
-	});
-	const link = setContext(() => ({
 		headers: {
 			Authorization: `Bearer ${functions.config().yelp.secret}`
-		}
-	})).concat(http);
-	const schema = await introspectSchema(link);
+		},
+		fetch
+	});
+	let schema;
+	try {
+		schema = await introspectSchema(link);
+	} catch (e) {
+		console.error(e.result.errors);
+		return e;
+	}
 	const executableSchema = makeRemoteExecutableSchema({
 		schema,
 		link
@@ -39,5 +42,6 @@ async function proxy() {
 
 export const api = functions.https.onRequest(async (req, res) => {
 	const server = await proxy();
+	if (!server) res.status(500);
 	return server(req, res);
 });

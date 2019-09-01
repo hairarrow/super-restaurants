@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React, { useContext, FC } from "react";
+import { SearchContext } from "../../views/Results";
 import Categories from "../Categories";
 import Select from "../Select";
 
