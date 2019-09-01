@@ -3,11 +3,9 @@ import { gql } from "apollo-boost";
 export default gql`
 	query Business {
 		business(id: "garaje-san-francisco") {
-			name
+			...businessDetails
 			id
 			alias
-			rating
-			url
 		}
 	}
 
