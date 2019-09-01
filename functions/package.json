@@ -3,15 +3,18 @@
 	"scripts": {
 		"lint": "tslint --project tsconfig.json",
 		"build": "tsc",
-		"serve": "npm run build && firebase serve --only functions",
-		"shell": "npm run build && firebase functions:shell",
+		"preserve": "npm run build",
+		"serve": "firebase serve --only functions",
+		"preshell": "npm run build",
+		"shell": "firebase functions:shell",
 		"start": "npm run shell",
 		"deploy": "firebase deploy --only functions",
 		"logs": "firebase functions:log",
 		"config": "firebase functions:config:get >> .runtimeconfig.json"
 	},
 	"engines": {
-		"node": "8"
+		"node": "8",
+		"npm": "6"
 	},
 	"main": "lib/index.js",
 	"dependencies": {

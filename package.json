@@ -2,6 +2,7 @@
 	"name": "restaurants",
 	"version": "0.1.0",
 	"private": true,
+	"proxy": "http://localhost:5000",
 	"engines": {
 		"yarn": "^1.13.0"
 	},
@@ -32,7 +33,9 @@
 		"test:results": "yarn test:all --json --outputFile=jest-test-results.json --detectOpenHandles ",
 		"test:results:watch": "yarn test:results --watch",
 		"prestart": "yarn codegen:generate",
-		"start": "react-scripts start",
+		"start": "concurrently -n CLIENT,SERVER \"yarn start:client\" \"yarn start:server\"",
+		"start:client": "react-scripts start",
+		"start:server": "cd functions && npm run serve",
 		"build": "react-scripts build",
 		"test": "react-scripts test --color",
 		"test:all": "yarn test --all",
@@ -41,10 +44,15 @@
 		"format": "prettier --write \"src/**/*.ts\"",
 		"check-format": "prettier --check \"src/**/*.ts\"",
 		"start:storybook": "NODE_PATH=. start-storybook -p 6006",
-		"prestorybook": "yarn test:results --ci --forceExit && yarn codegen:generate",
-		"storybook": "concurrently \"yarn test:results:watch\" \"yarn start:storybook\"",
+		"prestorybook": "CI=true react-scripts test --all --json --outputFile=jest-test-results.json --forceExit && yarn codegen:generate",
+		"storybook": "concurrently -n JEST,Server,Storybook \"yarn test:results:watch\" \"yarn start:server \" \"yarn start:storybook\"",
 		"prebuild-storybook": "yarn test:results --forceExit",
-		"build-storybook": "build-storybook"
+		"build-storybook": "build-storybook",
+		"preinstall": "cd functions && npm install",
+		"s": "yarn start",
+		"sb": "yarn storybook",
+		"t": "yarn test",
+		"ta": "yarn test:all"
 	},
 	"eslintConfig": {
 		"extends": "react-app"

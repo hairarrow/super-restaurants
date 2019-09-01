@@ -1,11 +1,10 @@
 import ApolloClient from "apollo-boost";
-require("dotenv").config();
 
 const client = new ApolloClient({
-	uri: process.env.API_HOST,
-	headers: {
-		authorization: `Bearer ${process.env.API_SECRET}`
-	}
+	// uri: "/super-restaurants/us-central1/api/graphql"
+	// Work around to make Storybook work
+	// TODO Make this an env variable
+	uri: "http://localhost:5000/super-restaurants/us-central1/api/graphql"
 });
 
 export default client;
