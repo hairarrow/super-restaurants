@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) _Even though it's (explicitly prohibited in this project's brief)[https://github.com/superformula/frontend-test#tech-stack]_. In lieu of that blatant disregard of the rules, I thought I would make up for it by hitting all of the (items on the **Bonus** section)[https://github.com/superformula/frontend-test#bonus] to have this repository as a useful scaffold for future applications.
+This project was bootstrapped with (Create React App)[https://github.com/facebook/create-react-app] _Even though it's [explicitly prohibited in this project's brief](https://github.com/superformula/frontend-test#tech-stack)_. In lieu of that blatant disregard of the rules, I thought I would make up for it by hitting all of the (items on the **Bonus** section)[https://github.com/superformula/frontend-test#bonus] to have this repository as a useful scaffold for future applications.
 
 To meet the requirements of this challenge, this project uses **React ^16, Styled Components, and Apollo** to create highly composable modules. In order to make this into a scaffold for future projects, I've also configured a variety of developer experience focused tools like **TypeScript, Prettier, TSLint, and Storybook** with addons for **component documentation (Knobs), accessibility testing (A11y)**, and integrated **Jest** results.
 
@@ -13,7 +13,7 @@ To meet the requirements of this challenge, this project uses **React ^16, Style
 
 ### IDE
 
-Use whatever makes you the fastest, but I highly recommend using an IDE that supports intelligent code completion. The plugins I'll recommend here are specific to (VS Code)[https://code.visualstudio.com] which includes IntelliSense (code completion), embedded Git, and a variety of tools that facilitate debugging and refactoring... but it runs on Electron 😅.
+Use whatever makes you the fastest, but I highly recommend using an IDE that supports intelligent code completion. The plugins I'll recommend here are specific to [VS Code](https://code.visualstudio.com) which includes IntelliSense (code completion), embedded Git, and a variety of tools that facilitate debugging and refactoring... but it runs on Electron 😅.
 
 The entirety of the code in this project is written in _TypeScript_ which often means you're more than likely going to have to write a significant amount of _CSS_ and _GraphQL_ using a `*.ts` file instead of the appropriate `.graphql` or `.s?css` file. There are a variety of extensions available for _VS Code_ that enable appropriate syntax highlighting for these kinds of code.
 
