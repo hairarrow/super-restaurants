@@ -1,7 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 graphql-schema.json
 jest-test-results.json
-types/
+/src/graphql/**/types/**
+
 
 # dependencies
 /node_modules
@@ -26,3 +27,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 firebase-debug.log
+src/types/graphql-global-types.ts

@@ -13,10 +13,13 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "react"
+		"jsx": "react",
+		"noUnusedLocals": true,
+		"noUnusedParameters": true
 	},
 	"include": ["src"],
 	"exclude": [
+		"src/graphql/types/**/*.ts",
 		"src/testHelpers/setupTests.js",
 		"src/types/graphql-global-types.ts",
 		"node_modules"
