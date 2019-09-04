@@ -1,1 +1,7 @@
-export default function clearFilters() {}
+import { SearchActions } from "../SearchActions";
+
+export default function clearFilters() {
+	return {
+		type: SearchActions.ClearFilters
+	};
+}

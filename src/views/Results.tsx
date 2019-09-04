@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Filters from "../components/Filters";
 import Header from "../components/Header";
+import SearchResults from "../components/Search";
 import { createSearchContext } from "../components/Search/SearchContext";
 import SearchReducer, {
 	initialState
@@ -21,6 +22,7 @@ const ResultsView: FC = () => (
 				</p>
 			</Header>
 			<Filters />
+			<SearchResults />
 		</main>
 	</SearchContextProvider>
 );

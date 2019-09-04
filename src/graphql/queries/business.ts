@@ -1,22 +1,40 @@
 import { gql } from "apollo-boost";
 
-export default gql`
-	query Business {
-		business(id: "garaje-san-francisco") {
-			...businessDetails
-			id
+export const businessPreviewFragment = gql`
+	fragment businessPreviewFragment on Business {
+		id
+		name
+		price
+		photos
+		is_closed
+		rating
+		categories {
+			title
 			alias
 		}
 	}
+`;
 
-	fragment businessDetails on Business {
-		name
-		is_closed
-		url
-		rating
-		price
-		categories {
-			title
+export const businessDetailsFragment = gql`
+	fragment businessDetailsFragment on Business {
+		review_count
+		location {
+			formatted_address
+		}
+		coordinates {
+			latitude
+			longitude
 		}
 	}
+`;
+
+export const businessQuery = gql`
+	query business($id: String) {
+		business(id: $id) {
+			...businessPreviewFragment
+			...businessDetailsFragment
+		}
+	}
+	${businessPreviewFragment}
+	${businessDetailsFragment}
 `;
