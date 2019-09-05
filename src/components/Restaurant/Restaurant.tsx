@@ -1,14 +1,16 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
 import { business_business } from "../../graphql/queries/types/Business";
 import Button from "../Button";
 import StyledRestaurant from "./Restaurant.styled";
 
 export type TRestaurantProps = Pick<
 	business_business,
-	"name" | "price" | "rating" | "photos" | "is_closed" | "categories"
+	"id" | "name" | "price" | "rating" | "photos" | "is_closed" | "categories"
 >;
 
 const Restaurant: FC<TRestaurantProps> = ({
+	id,
 	name,
 	price,
 	rating,
@@ -17,7 +19,9 @@ const Restaurant: FC<TRestaurantProps> = ({
 	categories
 }) => (
 	<StyledRestaurant>
-		<aside>{photos && <img src={photos[0] ? photos[0] : ""} />}</aside>
+		<aside>
+			{photos && <img alt={name!} src={photos[0] ? photos[0] : ""} />}
+		</aside>
 		<section>
 			<h1 className="name">{name}</h1>
 			<div>{rating}</div>
@@ -33,7 +37,9 @@ const Restaurant: FC<TRestaurantProps> = ({
 				</div>
 			</div>
 		</section>
-		<Button className="cta">Learn More</Button>
+		<Link to={`/${id}`}>
+			<Button className="cta">Learn More</Button>
+		</Link>
 	</StyledRestaurant>
 );
 

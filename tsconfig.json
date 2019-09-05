@@ -17,7 +17,7 @@
 	},
 	"include": ["src"],
 	"exclude": [
-		"*.stories.*",
+		"**/*.stories.*",
 		"src/graphql/types/**/*.ts",
 		"src/testHelpers/setupTests.js",
 		"src/types/graphql-global-types.ts",

@@ -25,7 +25,6 @@ const Filters: FC<HTMLProps<HTMLFormElement>> = ({ className }) => {
 		dispatch
 	]);
 	const handleSelectPrice = useCallback((e) => dispatch(updatePrice(e)), [
-		price,
 		updatePrice,
 		dispatch
 	]);
