@@ -42,7 +42,7 @@ const Categories = () => {
 				};
 			});
 
-		setCategories(serializedCategories);
+		setCategories([{ value: "", label: "All" }, ...serializedCategories]);
 		// tslint:disable-next-line: align
 	}, [stateCategories]);
 
