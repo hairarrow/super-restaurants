@@ -2,7 +2,12 @@ import { search_search_business } from "../../graphql/queries/types/search";
 import { Categories } from "../../graphql/queries/types/Categories";
 import { ISearchAction, SearchActions } from "./SearchActions";
 
-export type TPrice = string | "$" | "$$" | "$$$" | "$$$$";
+export type TPrice = string | "1" | "2" | "3" | "4";
+
+export interface IPriceOption {
+	value: string;
+	label: TPrice;
+}
 
 export interface ISearchInfo {
 	total?: number;
@@ -11,7 +16,7 @@ export interface ISearchInfo {
 
 export interface ISearchState {
 	openNow: boolean;
-	price: TPrice;
+	price: TPrice | undefined;
 	categories?: Categories;
 	results?: search_search_business[];
 	resultsInfo?: ISearchInfo;
@@ -59,7 +64,7 @@ export default function SearchReducer(
 		case SearchActions.UpdatePrice:
 			return {
 				...state,
-				price: action.price ? action.price : ""
+				price: action.price
 			};
 		case SearchActions.UpdateOpen:
 			return {

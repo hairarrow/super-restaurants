@@ -25,7 +25,7 @@ export enum SearchActions {
 export interface ISearchAction {
 	type: SearchActions;
 	openNow?: boolean;
-	price?: string;
+	price?: TPrice;
 	categories?: Categories;
 	results?: search_search_business[];
 	selectedCategories?: string[];
