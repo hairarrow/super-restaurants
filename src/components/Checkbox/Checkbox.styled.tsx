@@ -21,7 +21,6 @@ const StyledCheckbox = styled.div`
 
 	label {
 		display: flex;
-		align-items: center;
 		color: ${({ theme }) => theme.accent};
 		cursor: inherit;
 
@@ -32,7 +31,7 @@ const StyledCheckbox = styled.div`
 			display: inline-block;
 			width: 16px;
 			height: 16px;
-			box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
 			border-radius: 16px;
 			background: #fff;
 			transition: background 120ms ease;
@@ -45,9 +44,8 @@ const StyledCheckbox = styled.div`
 			left: 0;
 			width: 16px;
 			height: 16px;
-			box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 			border-radius: 16px;
-			transform: scale(0) translateY(2px);
+			transform: scale(0);
 			transform-origin: center center;
 			background: ${({ theme }) => theme.accent};
 			transition: transform 120ms ease;
@@ -59,7 +57,7 @@ const StyledCheckbox = styled.div`
 	}
 
 	input[type="checkbox"]:checked + label:after {
-		transform: scale(0.5) translateY(2px);
+		transform: scale(0.6);
 	}
 `;
 

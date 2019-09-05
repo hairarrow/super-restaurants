@@ -48,7 +48,16 @@ const SearchResults: FC = () => {
 
 	return (
 		<div>
-			<h2>All Restaurants</h2>
+			<h2
+				style={{
+					marginBottom: 36,
+					fontWeight: 300,
+					fontSize: 34,
+					lineHeight: "40px"
+				}}
+			>
+				All Restaurants
+			</h2>
 			<RestaurantList>
 				{results && results.length ? (
 					results.map(

@@ -12,6 +12,8 @@ const Container: FC<HTMLProps<HTMLDivElement>> = ({
 );
 
 export default styled(Container)`
-	max-width: 1312px;
+	max-width: 1360px;
+	padding-left: 24px;
+	padding-right: 24px;
 	margin: auto;
 `;
