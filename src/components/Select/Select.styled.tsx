@@ -50,7 +50,7 @@ const StyledSelect = styled.div`
 	}
 
 	.select-options {
-		max-height: 500px;
+		max-height: 50vh;
 		position: absolute;
 		top: 35px;
 		padding: 16px;
