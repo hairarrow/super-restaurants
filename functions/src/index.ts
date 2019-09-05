@@ -1,6 +1,5 @@
 import * as functions from "firebase-functions";
 import * as express from "express";
-import * as cors from "cors";
 import fetch from "cross-fetch";
 import { HttpLink } from "apollo-link-http";
 import {
@@ -30,12 +29,9 @@ async function proxy() {
 		link
 	});
 	const server = new ApolloServer({
-		schema: executableSchema,
-		playground: true,
-		introspection: true
+		schema: executableSchema
 	});
-	app.use(cors());
-	server.applyMiddleware({ app, path: "*" });
+	server.applyMiddleware({ app, path: "/", cors: true });
 
 	return app;
 }
