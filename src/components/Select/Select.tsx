@@ -44,7 +44,7 @@ const Select: FC<ISelectProps & HTMLProps<HTMLInputElement>> = ({
 	const handleSelect = useCallback((e) => triggerChange(e), [triggerChange]);
 
 	useEffect(() => {
-		const timer = setTimeout(() => setShowOptions(false), 1500);
+		const timer = setTimeout(() => setShowOptions(false), 800);
 		if (mouseIn) clearTimeout(timer);
 
 		return () => clearTimeout(timer);
