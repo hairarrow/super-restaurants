@@ -27,7 +27,7 @@ export interface ISearchAction {
 	openNow?: boolean;
 	price?: TPrice;
 	categories?: Categories;
-	results?: search_search_business[];
+	results?: (search_search_business | null)[];
 	selectedCategories?: string[];
 	resultsInfo?: ISearchInfo;
 }
@@ -37,7 +37,7 @@ export interface ISearchActions<T = ISearchAction> {
 	updatePrice(price: TPrice): T;
 	updateCategories(categories: Categories): T;
 	updateSelectedCategories(selected: string[]): T;
-	updateResults(results: search_search_business[]): T;
+	updateResults(results: (search_search_business | null)[]): T;
 	updateResultsInfo(resultsInfo: ISearchInfo): T;
 	clearFilters(): T;
 }

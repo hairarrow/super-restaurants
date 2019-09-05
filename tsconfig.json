@@ -13,12 +13,11 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "react",
-		"noUnusedLocals": true,
-		"noUnusedParameters": true
+		"jsx": "react"
 	},
 	"include": ["src"],
 	"exclude": [
+		"*.stories.*",
 		"src/graphql/types/**/*.ts",
 		"src/testHelpers/setupTests.js",
 		"src/types/graphql-global-types.ts",

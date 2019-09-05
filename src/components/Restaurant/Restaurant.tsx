@@ -1,7 +1,12 @@
 import React, { FC } from "react";
 import { business_business } from "../../graphql/queries/types/Business";
 
-const Restaurant: FC<business_business> = ({
+export type TRestaurantProps = Pick<
+	business_business,
+	"name" | "price" | "rating" | "photos" | "is_closed" | "categories"
+>;
+
+const Restaurant: FC<TRestaurantProps> = ({
 	name,
 	price,
 	rating,

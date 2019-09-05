@@ -1,7 +1,8 @@
-import React from "react";
 import { storiesOf } from "@storybook/react";
-import App from "./App";
+import React from "react";
+// import App from "./App";
 
 const story = storiesOf("App", module);
 
-story.add("Default", () => <App />);
+// story.add("Default", () => <App />);
+story.add("Default", () => <div />);

@@ -18,7 +18,7 @@ export interface ISearchState {
 	openNow: boolean;
 	price: TPrice | undefined;
 	categories?: Categories;
-	results?: search_search_business[];
+	results?: (search_search_business | null)[];
 	resultsInfo?: ISearchInfo;
 	selectedCategories?: string[];
 }

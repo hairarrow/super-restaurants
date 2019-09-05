@@ -53,7 +53,7 @@ const Categories = () => {
 	}, [data, dispatch, updateCategories, categories.length]);
 
 	const handleChange = useCallback(
-		(e: string) => {
+		(e) => {
 			if (!selectedCategories) return;
 			if (selectedCategories.length && selectedCategories.includes(e))
 				dispatch(
