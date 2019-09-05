@@ -24,7 +24,7 @@ export interface ISearchState {
 }
 
 export const initialState: ISearchState = {
-	openNow: true,
+	openNow: false,
 	price: "",
 	results: [],
 	selectedCategories: [],
@@ -48,7 +48,7 @@ export default function SearchReducer(
 					total: 0,
 					currentPage: 0
 				},
-				openNow: true,
+				openNow: false,
 				price: ""
 			};
 		case SearchActions.UpdateSelectedCategories:
