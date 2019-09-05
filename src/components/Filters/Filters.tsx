@@ -1,10 +1,11 @@
-import React, { useCallback, useContext, FC } from "react";
+import React, { useCallback, useContext, FC, HTMLProps } from "react";
 import { SearchContext } from "../../views/Results";
 import Categories from "../Categories";
 import Checkbox from "../Checkbox";
 import Select from "../Select";
+import StyledFilters from "./Filters.styled";
 
-const Filters: FC = () => {
+const Filters: FC<HTMLProps<HTMLFormElement>> = ({ className }) => {
 	const {
 		state: { openNow, price },
 		actions: { updateOpen, updatePrice },
@@ -30,12 +31,14 @@ const Filters: FC = () => {
 	]);
 
 	return (
-		<form
+		<StyledFilters
+			className={className}
 			onSubmit={preventSubmit}
 			style={{ display: "flex", alignItems: "center" }}
 		>
-			<h1>Filter By:</h1>
+			<label className="filters-title">Filter By:</label>
 			<Checkbox
+				className="filters-open"
 				label="Open Now"
 				checked={openNow}
 				onChange={handleToggleOpen}
@@ -46,7 +49,7 @@ const Filters: FC = () => {
 				onChange={handleSelectPrice}
 			/>
 			<Categories />
-		</form>
+		</StyledFilters>
 	);
 };
 
