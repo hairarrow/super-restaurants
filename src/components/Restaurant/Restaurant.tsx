@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import { business_business } from "../../graphql/queries/types/Business";
+import Button from "../Button";
+import StyledRestaurant from "./Restaurant.styled";
 
 export type TRestaurantProps = Pick<
 	business_business,
@@ -14,18 +16,25 @@ const Restaurant: FC<TRestaurantProps> = ({
 	is_closed,
 	categories
 }) => (
-	<article>
+	<StyledRestaurant>
 		<aside>{photos && <img src={photos[0] ? photos[0] : ""} />}</aside>
 		<section>
-			<h1>{name}</h1>
+			<h1 className="name">{name}</h1>
 			<div>{rating}</div>
-			<div>
+			<div className="details">
 				<div>{categories && categories[0] ? categories[0].title : ""}</div>
-				<div>{price}</div>
-				<div>{is_closed ? "CLOSED" : "OPEN NOW"}</div>
+				<div className="price">{price}</div>
+				<div
+					className={`open-indicator ${
+						is_closed ? "open-indicator--closed" : ""
+					}`}
+				>
+					{is_closed ? "CLOSED" : "OPEN NOW"}
+				</div>
 			</div>
 		</section>
-	</article>
+		<Button className="cta">Learn More</Button>
+	</StyledRestaurant>
 );
 
 export default Restaurant;

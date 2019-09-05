@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, HTMLProps } from "react";
 import StyledButton from "./Button.styled";
 
 type ButtonVariant = "default" | "light";
@@ -8,12 +8,16 @@ export interface IButtonProps {
 	disabled?: boolean;
 }
 
-const Button: FC<IButtonProps> = ({
+const Button: FC<IButtonProps & HTMLProps<HTMLButtonElement>> = ({
 	variant = "default",
 	disabled = false,
-	children
+	children,
+	className
 }) => (
-	<StyledButton className={`button--${variant}`} disabled={disabled}>
+	<StyledButton
+		className={`button--${variant} ${className}`}
+		disabled={disabled}
+	>
 		{children}
 	</StyledButton>
 );

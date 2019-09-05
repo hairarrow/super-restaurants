@@ -1,6 +1,7 @@
 export interface ITheme {
 	fg: string;
 	bg: string;
+	mutedFg: string;
 	accent: string;
 	green: string;
 	red: string;
@@ -12,6 +13,7 @@ export interface ITheme {
 const theme: ITheme = {
 	fg: "#131313",
 	bg: "#fcfcfc",
+	mutedFg: "#757575",
 	accent: "#002B56",
 	green: "#00E8A4",
 	red: "#FF3548",
