@@ -1,15 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, HTMLProps } from "react";
 import styled from "styled-components";
 import { TRestaurantProps } from "./Restaurant";
 
-const RestaurantHeader: FC<TRestaurantProps> = ({
-	name,
-	rating,
-	categories,
-	price,
-	is_closed
-}) => (
-	<StyledHeader>
+const RestaurantHeader: FC<
+	TRestaurantProps & Pick<HTMLProps<HTMLElement>, "style" | "className">
+> = ({ name, rating, categories, price, is_closed, style, className }) => (
+	<StyledHeader className={className} style={style}>
 		<h1 className="name">{name}</h1>
 		<div>{rating}</div>
 		<div className="details">
@@ -39,27 +35,27 @@ const StyledHeader = styled.section`
 		/* This should cut off  */
 
 		margin: 8px 0;
-		font-size: 20px;
-		line-height: 28px;
+		font-size: 1.25em;
+		line-height: 1.75em;
 		font-weight: 400;
 	}
 
 	.details {
-		margin: 8px 0;
+		margin: 0.5em 0;
 		display: flex;
 		text-transform: uppercase;
-		font-size: 12px;
+		font-size: 0.75em;
 		color: ${({ theme }) => theme.mutedFg};
 	}
 
 	.price {
-		margin-left: 8px;
+		margin-left: 0.5em;
 		margin-right: auto;
 
 		&:before {
 			content: "•";
 			display: inline-block;
-			padding-right: 8px;
+			padding-right: 0.5em;
 			transform: translateY(-1px);
 		}
 	}
@@ -71,10 +67,10 @@ const StyledHeader = styled.section`
 		&:before {
 			content: "";
 			display: inline-block;
-			margin-right: 6px;
-			width: 8px;
-			height: 8px;
-			border-radius: 8px;
+			margin-right: 0.5em;
+			width: 0.5em;
+			height: 0.5em;
+			border-radius: 0.5em;
 			background: ${({ theme }) => theme.green};
 		}
 
