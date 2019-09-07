@@ -37,8 +37,8 @@ const Restaurant: FC<TRestaurantProps> = ({
 				</div>
 			</div>
 		</section>
-		<Link to={`/${id}`}>
-			<Button className="cta">Learn More</Button>
+		<Link to={`/${id}`} className="cta">
+			<Button className="cta__button">Learn More</Button>
 		</Link>
 	</StyledRestaurant>
 );
