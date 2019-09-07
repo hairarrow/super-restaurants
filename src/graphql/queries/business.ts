@@ -25,6 +25,16 @@ export const businessDetailsFragment = gql`
 			latitude
 			longitude
 		}
+		reviews {
+			id
+			text
+			rating
+			time_created
+			user {
+				image_url
+				name
+			}
+		}
 	}
 `;
 
