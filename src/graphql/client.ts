@@ -5,7 +5,8 @@ const client = new ApolloClient({
 	// Work around to make Storybook work
 	// TODO Make this an env variable
 	// uri: "http://localhost:5000/super-restaurants/us-central1/api/graphql"
-	uri: "https://us-central1-super-restaurants.cloudfunctions.net/api"
+	uri: "http://localhost:5000/super-restaurants/us-central1/api"
+	// uri: "https://us-central1-super-restaurants.cloudfunctions.net/api"
 });
 
 export default client;

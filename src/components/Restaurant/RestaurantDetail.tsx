@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { oc } from "ts-optchain";
-import { business } from "../../graphql/queries/types/Business";
+import { business } from "../../graphql/queries/types/business";
 import Container from "../Container";
 import RestaurantHeader from "./RestaurantHeader";
 

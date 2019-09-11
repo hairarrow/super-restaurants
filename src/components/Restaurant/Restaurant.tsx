@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { business_business } from "../../graphql/queries/types/Business";
+import { business_business } from "../../graphql/queries/types/business";
 import Button from "../Button";
 import StyledRestaurant from "./Restaurant.styled";
 import RestaurantHeader from "./RestaurantHeader";

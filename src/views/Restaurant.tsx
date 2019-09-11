@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { oc } from "ts-optchain";
 import RestaurantDetail from "../components/Restaurant/RestaurantDetail";
 import { businessQuery } from "../graphql/queries/business";
-import { business, businessVariables } from "../graphql/queries/types/Business";
+import { business, businessVariables } from "../graphql/queries/types/business";
 
 const RestaurantView: FC<any> = ({ match }) => {
 	const { loading, error, data } = useQuery<business, businessVariables>(
