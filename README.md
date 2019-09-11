@@ -7,6 +7,27 @@ To meet the requirements of this challenge, this project uses **React ^16, Style
 - [ ] Define each module file (e.g. `Module.stories.tsx`)
 - [ ] Optimize the categories query by creating a custom resolver that will filter non-restaurant or food related categories
 
+## Set Up
+
+Before you run the project, please make sure you've installed the latest version of Yarn.
+
+1. Install firebase-cli and login with your account. **Note: This requires permission to the firebase project for this repo (Ask [Emmanuel](mailto:hello@hairarrow.dev)), or a cloned Firebase project you have permissions to.**
+
+```
+$ npm install -g firebase-tools (or yarn global add firebase-tools)
+$ firebase login
+```
+
+2. Install dependencies. This command will install everything you need to run the server, client, and create the configuration for the firebase functions.
+
+```
+$ yarn
+```
+
+3. Rename `env.default` to `.env` and make sure you have a valid `API_SECRET` from **Yelp**. If you have access to the firebase project, you should have the development secret in `functions/.runtimeconfig.json`
+
+4. **`yarn start`**
+
 ## Structure
 
 ## Developer Experience
